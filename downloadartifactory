@@ -1,0 +1,1 @@
+curl -u admin:password -O "http://192.168.40.145:8081/artifactory/example-repo-local/sampleapp.war"
