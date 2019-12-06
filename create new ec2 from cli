@@ -1,0 +1,17 @@
+- name: Create EC2 Instance
+  hosts: localhost
+  tasks:
+    - ec2:
+        key_name: ravikey  #keyname 
+        instance_type: t2.micro
+        image: ami-4f0b4e20
+        wait: yes
+        group: all # security group name
+        count: 1
+        vpc_subnet_id: subnet-212e0b48
+        assign_public_ip: yes
+        region: ap-south-1
+      register: out
+   
+    - debug:
+        msg: "{{out}}
